@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Terreno
+  - Deposito
+  - Mano
+  - Cinta
+  - Estante
+  - FinTaxi
+  - Obstaculo
   layers:
   - Default
   - TransparentFX
@@ -13,10 +20,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Camion1
+  - Camion2
+  - Obstaculo
+  - Taxis
   - 
   - 
   - 

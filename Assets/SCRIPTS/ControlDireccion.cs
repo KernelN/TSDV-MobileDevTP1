@@ -35,8 +35,9 @@ public class ControlDireccion : MonoBehaviour
 		{
 		case TipoInput.Mouse:
 			if(Habilitado) 
-				gameObject.SendMessage("SetGiro", MousePos.Relation(MousePos.AxisRelation.Horizontal));//debe ser reemplanado
-			break;
+				gameObject.GetComponent<CarController>().SetGiro(MousePos.Relation(MousePos.AxisRelation.Horizontal));
+
+            break;
 			
 		case TipoInput.Kinect:
 			
@@ -72,7 +73,7 @@ public class ControlDireccion : MonoBehaviour
 					Giro = 1;
 				
 				if(Habilitado)
-					gameObject.SendMessage("SetGiro", Giro);//debe ser reemplanado
+					gameObject.GetComponent<CarController>().SetGiro(Giro);
 				
 				break;
 				
@@ -83,28 +84,32 @@ public class ControlDireccion : MonoBehaviour
 					Giro = (-1);
 				
 				if(Habilitado)
-					gameObject.SendMessage("SetGiro", Giro);//debe ser reemplanado
+					gameObject.GetComponent<CarController>().SetGiro(Giro);
 				
 				break;
 			}
 			break;
             case TipoInput.AWSD:
                 if (Habilitado) {
-                    if (Input.GetKey(KeyCode.A)) {
-                        gameObject.SendMessage("SetGiro", -1);
+                    if (Input.GetKey(KeyCode.A))
+                    {
+                        gameObject.GetComponent<CarController>().SetGiro(-1);
                     }
-                    if (Input.GetKey(KeyCode.D)) {
-                        gameObject.SendMessage("SetGiro", 1);
+                    if (Input.GetKey(KeyCode.D))
+                    {
+                        gameObject.GetComponent<CarController>().SetGiro(1);
                     }
                 }
                 break;
             case TipoInput.Arrows:
                 if (Habilitado) {
-                    if (Input.GetKey(KeyCode.LeftArrow)) {
-                        gameObject.SendMessage("SetGiro", -1);
+                    if (Input.GetKey(KeyCode.LeftArrow))
+                    {
+                        gameObject.GetComponent<CarController>().SetGiro(-1);
                     }
-                    if (Input.GetKey(KeyCode.RightArrow)) {
-                        gameObject.SendMessage("SetGiro", 1);
+                    if (Input.GetKey(KeyCode.RightArrow))
+                    {
+                        gameObject.GetComponent<CarController>().SetGiro(1);
                     }
                 }
                 break;

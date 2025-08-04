@@ -77,8 +77,9 @@ public class Frenado : MonoBehaviour
 	{
 		//Debug.Log(gameObject.name + "frena");
 		GetComponent<ControlDireccion>().enabled = false;
-		gameObject.SendMessage("SetAcel", 0f);
-		GetComponent<Rigidbody>().velocity = Vector3.zero;
+		gameObject.GetComponent<CarController>().SetAcel(0);
+
+        GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 		
 		Frenando = true;
 		
@@ -91,8 +92,8 @@ public class Frenado : MonoBehaviour
 	{
 		//Debug.Log(gameObject.name + "restaura la velociad");
 		GetComponent<ControlDireccion>().enabled = true;
-		gameObject.SendMessage("SetAcel", 1f);
-		Frenando = false;
+        gameObject.GetComponent<CarController>().SetAcel(1);
+        Frenando = false;
 		Tempo = 0;
 		Contador = 0;
 		//gameObject.SendMessage("SetDragZ", 1f);

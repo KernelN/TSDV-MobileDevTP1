@@ -81,7 +81,7 @@ public class AcelerAuto : MonoBehaviour
 				//if(Velocidad < 0)
 					//Velocidad = 0;
 					
-				GetComponent<Rigidbody>().velocity /= 2;
+				GetComponent<Rigidbody>().linearVelocity /= 2;
 			}
 			Obstaculo = null;
 		}
@@ -89,7 +89,7 @@ public class AcelerAuto : MonoBehaviour
 	
 	public void Chocar(ReductorVelColl obst)
 	{
-		GetComponent<Rigidbody>().velocity /= 2;
+		GetComponent<Rigidbody>().linearVelocity /= 2;
 	}
 	
 }
