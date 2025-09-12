@@ -42,7 +42,13 @@ public class GameManager : MonoBehaviour {
     //--------------------------------------------------------//
 
     void Awake() {
-        GameManager.Instancia = this;
+        if (Instancia)
+        {
+            Destroy(this);
+            return;
+        }
+        
+        Instancia = this;
     }
     IEnumerator Start() {
         yield return null;
@@ -61,18 +67,11 @@ public class GameManager : MonoBehaviour {
 
         switch (EstAct) {
             case EstadoJuego.Calibrando:
-
-                if (Input.GetKeyDown(KeyCode.W)) {
+                if (InputManager.inst.Axis1.y > 0) 
                     Player1.Seleccionado = true;
-                }
-
-                if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                if (InputManager.inst.Axis2.y > 0) 
                     Player2.Seleccionado = true;
-                }
-
                 break;
-
-
             case EstadoJuego.Jugando:
 
                 //SKIP LA CARRERA
@@ -125,7 +124,8 @@ public class GameManager : MonoBehaviour {
     }
     void OnDestroy()
     {
-        GameManager.Instancia = null;
+        if (Instancia == this)
+            Instancia = null;
     }
 
     //----------------------------------------------------------//
