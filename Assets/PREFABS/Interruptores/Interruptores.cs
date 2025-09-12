@@ -8,18 +8,6 @@ public class Interruptores : MonoBehaviour
 	public GameObject[] AActivar;
 	
 	public bool Activado = false;
-
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
 	
 	void OnTriggerEnter(Collider other) 
 	{
@@ -28,10 +16,9 @@ public class Interruptores : MonoBehaviour
 			if(other.tag == TagPlayer)
 			{
 				Activado = true;
-				print("activado interrutor");
 				for(int i = 0; i < AActivar.Length; i++)
 				{
-					AActivar[i].SetActiveRecursively(true);
+					AActivar[i].SetActive(true);
 				}
 			}
 		}

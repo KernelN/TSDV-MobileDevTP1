@@ -17,11 +17,6 @@ public class Bolsa : MonoBehaviour
 	void Start () 
 	{
 		Monto = Pallet.Valores.Valor2;
-		
-		
-		if(Particulas != null)
-			Particulas.SetActive(false);
-			
 	}
 	
 	// Update is called once per frame
@@ -35,9 +30,6 @@ public class Bolsa : MonoBehaviour
 			{
 				GetComponent<Renderer>().enabled = true;
 				GetComponent<Collider>().enabled = true;
-				
-				Particulas.GetComponent<ParticleSystem>().Stop();
-				gameObject.SetActive(false);
 			}
 		}
 		
@@ -48,26 +40,18 @@ public class Bolsa : MonoBehaviour
 		if(coll.tag == TagPlayer)
 		{
 			Pj = coll.GetComponent<Player>();
-			//if(IdPlayer == Pj.IdPlayer)
-			//{
-				if(Pj.AgregarBolsa(this))
-					Desaparecer();
-			//}
+			if(Pj.AgregarBolsa(this))
+				Desaparecer();
 		}
 	}
 	
 	public void Desaparecer()
 	{
-		Particulas.GetComponent<ParticleSystem>().Play();
+		Particulas.SetActive(true);
 		Desapareciendo = true;
 		
 		GetComponent<Renderer>().enabled = false;
 		GetComponent<Collider>().enabled = false;
-		
-		if(Particulas != null)
-		{
-			Particulas.GetComponent<ParticleSystem>().Play();
-		}
 	
 	}
 }

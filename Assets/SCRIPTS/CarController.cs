@@ -11,11 +11,6 @@ public class CarController : MonoBehaviour {
     float giro = 0f;
     float acel = 1f;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-
 	
 	// Update is called once per frame
 	void FixedUpdate () {

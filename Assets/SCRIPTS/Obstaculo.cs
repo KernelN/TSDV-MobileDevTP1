@@ -12,12 +12,6 @@ public class Obstaculo : MonoBehaviour
 	
 	bool Chocado = false;
 	bool Desapareciendo = false;
-
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
 	
 	// Update is called once per frame
 	void Update () 
@@ -41,7 +35,7 @@ public class Obstaculo : MonoBehaviour
 			Tempo2 += T.GetDT();
 			if(Tempo2 > TiempDesapareciendo)
 			{
-				gameObject.SetActiveRecursively(false);
+				gameObject.SetActive(false);
 			}
 		}
 	}

@@ -15,12 +15,6 @@ public class PantallaCalibTuto : MonoBehaviour
 	public Texture2D ImaReady;
 	
 	public ContrCalibracion ContrCalib;
-
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
 	
 	// Update is called once per frame
 	void Update () 

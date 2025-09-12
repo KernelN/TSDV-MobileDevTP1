@@ -9,7 +9,6 @@ public class ManejoPallets : MonoBehaviour
 	
 	public virtual bool Recibir(Pallet pallet)
 	{
-		Debug.Log(gameObject.name+" / Recibir()");
 		Pallets.Add(pallet);
 		pallet.Pasaje();
 		return true;
@@ -22,13 +21,6 @@ public class ManejoPallets : MonoBehaviour
 			return true;
 		else
 			return false;
-		
-		/*
-		if(Pallets.Count > Contador)
-			return true;
-		else
-			return false;
-			*/
 	}
 	
 	public virtual void Dar(ManejoPallets receptor)

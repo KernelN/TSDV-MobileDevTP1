@@ -74,7 +74,6 @@ public class Estanteria : ManejoPallets
                     Pallets.RemoveAt(0);
                     Contenido.Sacar();
                     ApagarAnim();
-                    //Debug.Log("pallet entregado a Mano de Estanteria");
                 }
             }
         }
