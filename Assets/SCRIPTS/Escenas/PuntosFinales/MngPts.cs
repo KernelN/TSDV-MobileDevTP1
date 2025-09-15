@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class MngPts : MonoBehaviour
 {
-    Rect R = new Rect();
-
     public float TiempEmpAnims = 2.5f;
     float Tempo = 0;
 
@@ -25,7 +23,7 @@ public class MngPts : MonoBehaviour
 
     public bool ActivadoAnims = false;
 
-    Visualizacion Viz = new Visualizacion();
+    Visualizacion Viz;
 
     //---------------------------------//
 
@@ -72,10 +70,10 @@ public class MngPts : MonoBehaviour
                     TempoParpadeo += 0.1f;
                 
                 PrimerImaParp = !PrimerImaParp;
-                if(DatosPartida.LadoGanadaor == DatosPartida.Lados.Solo)
+                if(DatosPartida.LadoGanador == DatosPartida.Lados.Solo)
                     PanelesDinero[0].SetActive(PrimerImaParp);
                 else
-                    PanelesDinero[(int)DatosPartida.LadoGanadaor].SetActive(!PrimerImaParp);
+                    PanelesDinero[(int)DatosPartida.LadoGanador].SetActive(!PrimerImaParp);
             }
         }
         else
@@ -101,21 +99,21 @@ public class MngPts : MonoBehaviour
 
     void SetGanador()
     {
-        switch (DatosPartida.LadoGanadaor)
+        switch (DatosPartida.LadoGanador)
         {
             case DatosPartida.Lados.Solo:
                 Ganador.sprite = Ganadores[0];
-                TextosDinero[0].text = "$" + Viz.PrepararNumeros(DatosPartida.PtsGanador);
+                TextosDinero[0].text = "$" + MoneyToString.Get(DatosPartida.PtsGanador);
                 break;
             case DatosPartida.Lados.Der:
                 Ganador.sprite = Ganadores[1];
-                TextosDinero[1].text = "$" + Viz.PrepararNumeros(DatosPartida.PtsGanador);
-                TextosDinero[0].text = "$" + Viz.PrepararNumeros(DatosPartida.PtsPerdedor);
+                TextosDinero[1].text = "$" + MoneyToString.Get(DatosPartida.PtsGanador);
+                TextosDinero[0].text = "$" + MoneyToString.Get(DatosPartida.PtsPerdedor);
                 break;
             case DatosPartida.Lados.Izq:
                 Ganador.sprite = Ganadores[0];
-                TextosDinero[0].text = "$" + Viz.PrepararNumeros(DatosPartida.PtsGanador);
-                TextosDinero[1].text = "$" + Viz.PrepararNumeros(DatosPartida.PtsPerdedor);
+                TextosDinero[0].text = "$" + MoneyToString.Get(DatosPartida.PtsGanador);
+                TextosDinero[1].text = "$" + MoneyToString.Get(DatosPartida.PtsPerdedor);
                 break;
         }
     }

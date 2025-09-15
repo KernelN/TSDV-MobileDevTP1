@@ -74,12 +74,11 @@ namespace Brinks.Gameplay
                 //Check all active bags
                 for (int i = 0; i < activeBagsZone.Count; i++)
                 {
-                    break;
                     //If there are more bags after this index
                     //AND current bag is in an older zone than the oldest zone
                     //Remove it
                     while(activeBagsZone.Count > i && activeBagsZone[i].x < oldestZone)
-                        activeBags[i].Desaparecer();
+                        activeBags[i].Desaparecer(true);
                 }
 
                 int newestZone = ZoneManager.inst.zoneRange.y;
