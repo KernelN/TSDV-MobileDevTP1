@@ -16,7 +16,7 @@ namespace Brinks.Gameplay
         }
         
         //[Header("Set Values")]
-        [SerializeField, Min(0)] int maxZoneOffset = 2;
+        [SerializeField] int maxZoneOffset = 2;
         [SerializeField] BagZone[] spawnPosByZone;
         [SerializeField] Bolsa[] moneyBags;
         //[Header("Runtime Values")]
@@ -96,13 +96,14 @@ namespace Brinks.Gameplay
                 int newestZone = ZoneManager.inst.zoneRange.y;
                 int maxZone = newestZone+maxZoneOffset;
                 
-                if(newestZone > spawnPosByZone.Length)
-                    newestZone = spawnPosByZone.Length;
+                //if newestZone is -1, max zone will be 0, so for loop will be skipped
+                if(newestZone >= spawnPosByZone.Length)
+                    newestZone = spawnPosByZone.Length-1; 
                 if (maxZone > spawnPosByZone.Length)
                     maxZone = spawnPosByZone.Length;
                 
                 //Try to spawn bags for each new zone
-                for (int i = newestZone; i <= maxZone; i++)
+                for (int i = newestZone; i < maxZone; i++)
                     for (int j = 0; j < spawnPosByZone[i].spawnPos.Length; j++)
                         ForceSpawnBag();
             };
