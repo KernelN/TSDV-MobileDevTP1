@@ -62,7 +62,7 @@ public class GameplayManager : MonoBehaviour
     }
     IEnumerator Start()
     {
-        InputManager.inst.has2Players = DosJugadores;
+        CustomInputManager.inst.has2Players = DosJugadores;
         yield return null;
         IniciarTutorial();
     }
@@ -79,9 +79,9 @@ public class GameplayManager : MonoBehaviour
         switch (EstAct)
         {
             case EstadoJuego.Calibrando:
-                if (InputManager.inst.Axis1.y > 0)
+                if (CustomInputManager.inst.Axis1.y > 0)
                     Player1.Seleccionado = true;
-                if (DosJugadores && InputManager.inst.Axis2.y > 0)
+                if (DosJugadores && CustomInputManager.inst.Axis2.y > 0)
                     Player2.Seleccionado = true;
                 break;
             case EstadoJuego.Jugando:

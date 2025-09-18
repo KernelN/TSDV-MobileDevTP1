@@ -78122,9 +78122,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1471600240}
     m_Modifications:
+    - target: {fileID: 1450006490138954, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510387128484156, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587268080765924, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1753749050268706, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
       propertyPath: m_Name
       value: Camion - new 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645270325682138, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -2.803
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742830494773186, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -2.803
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749387652305368, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -2.803
       objectReference: {fileID: 0}
     - target: {fileID: 4827866222774608, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
       propertyPath: m_RootOrder
@@ -78157,6 +78181,10 @@ PrefabInstance:
     - target: {fileID: 4827866222774608, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897067902747892, guid: b81b1a58a0f14c9439cbdd014e695f71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -2.803
       objectReference: {fileID: 0}
     - target: {fileID: 23020134573772022, guid: b81b1a58a0f14c9439cbdd014e695f71,
         type: 3}
@@ -80256,8 +80284,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Joystick1: {fileID: 5347541341002542962}
   Joystick2: {fileID: 60763192}
-  forceMobile: 1
+  forceMobile: 0
   has2Players: 0
+  inputDevice: 0
 --- !u!114 &1367616630
 MonoBehaviour:
   m_ObjectHideFlags: 0

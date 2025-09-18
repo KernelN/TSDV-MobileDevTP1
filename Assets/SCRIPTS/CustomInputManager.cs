@@ -1,9 +1,9 @@
 using Terresquall;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class CustomInputManager : MonoBehaviour
 {
-    public static InputManager inst;
+    public static CustomInputManager inst;
     enum InputDevice { Keyboard, Mobile, Gamepad}
     
     [Header("Set Values")]
@@ -12,7 +12,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] bool forceMobile = false;
     [Header("Runtime Values")]
     public bool has2Players;
-    InputDevice inputDevice;
+    [SerializeField] InputDevice inputDevice;
 
     public Vector2 Axis1 { get; private set; }
     public Vector2 Axis2 { get; private set; }
@@ -36,10 +36,17 @@ public class InputManager : MonoBehaviour
     {
         if(Application.isMobilePlatform || forceMobile)
             inputDevice = InputDevice.Mobile;
-        else if(Input.GetJoystickNames().Length > 0)
-            inputDevice = InputDevice.Gamepad;
-        else 
-            inputDevice = InputDevice.Keyboard;
+        else
+        {
+            string[] gamepads = Input.GetJoystickNames();
+            bool hasGamepad = false;
+            for (int i = 0; i < gamepads.Length && !hasGamepad; i++)
+                hasGamepad = gamepads[i] != "";
+            if (hasGamepad)
+                inputDevice = InputDevice.Gamepad;
+            else
+                inputDevice = InputDevice.Keyboard;
+        }
 
         if(inputDevice != InputDevice.Mobile)
         {

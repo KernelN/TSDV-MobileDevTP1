@@ -10,7 +10,7 @@ public class PalletMover : ManejoPallets
 
     private void Update() 
     {
-        Vector2 axis = isPlayer1 ? InputManager.inst.Axis1 : InputManager.inst.Axis2;
+        Vector2 axis = isPlayer1 ? CustomInputManager.inst.Axis1 : CustomInputManager.inst.Axis2;
         
         if(axis.sqrMagnitude == 0) return;
         

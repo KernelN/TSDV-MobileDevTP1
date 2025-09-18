@@ -20,7 +20,7 @@ public class ControlDireccion : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		Giro = EsJugador1 ? InputManager.inst.Axis1.x : InputManager.inst.Axis2.x;
+		Giro = EsJugador1 ? CustomInputManager.inst.Axis1.x : CustomInputManager.inst.Axis2.x;
 		carController.SetGiro(Giro);
 	}
 
