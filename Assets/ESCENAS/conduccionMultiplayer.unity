@@ -78480,6 +78480,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -109.44
       objectReference: {fileID: 0}
+    - target: {fileID: 6988291507499223898, guid: db6086bb6cb40af44868891788f049a9,
+        type: 3}
+      propertyPath: ID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8844565756325672776, guid: db6086bb6cb40af44868891788f049a9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -79911,6 +79916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   track: 1
+  play: 1
 --- !u!4 &1150479561
 Transform:
   m_ObjectHideFlags: 0
