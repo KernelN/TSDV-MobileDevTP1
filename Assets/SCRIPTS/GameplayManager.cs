@@ -63,7 +63,6 @@ public class GameplayManager : MonoBehaviour
     IEnumerator Start()
     {
         InputManager.inst.has2Players = DosJugadores;
-        MusicManager.inst.PlayTrack(MusicManager.Track.Game);
         yield return null;
         IniciarTutorial();
     }
@@ -71,15 +70,11 @@ public class GameplayManager : MonoBehaviour
     {
         //REINICIAR
         if (Input.GetKey(KeyCode.Alpha0))
-        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
 
         //CIERRA LA APLICACION
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            GameManager.inst.QuitGame();
-        }
+            SceneManager.LoadScene("MainMenu");
 
         switch (EstAct)
         {

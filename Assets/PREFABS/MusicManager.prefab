@@ -308,7 +308,7 @@ MonoBehaviour:
   tracks:
   - {fileID: 8300000, guid: 275861f591cfbbd4e9991275611ec1fb, type: 3}
   - {fileID: 8300000, guid: 637196f3af7144b4abeb205a680ff51e, type: 3}
-  fadeDuration: 0.5
+  fadeDuration: 2
   fadeInCurve:
     serializedVersion: 2
     m_Curve:
@@ -339,14 +339,14 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -3.4342983
+      outSlope: -3.4342983
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.05688623
     - serializedVersion: 3
-      time: 1
+      time: 0.8
       value: 0
       inSlope: 0
       outSlope: 0
@@ -359,6 +359,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   s1: {fileID: 2173002256084130227}
   s2: {fileID: 1520828463767440455}
+  cTrack: 2
 --- !u!81 &2333487386618214228
 AudioListener:
   m_ObjectHideFlags: 0
