@@ -24,6 +24,8 @@ EditorBuildSettings:
     path: Assets/ESCENAS/PtsFinalSingleplayer.unity
     guid: 3fed48a553168ae458bbf014c512a5cd
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: f85c57037c531f142828c2af20ad0d15,
+      type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 8b680218b9791a24a9aa2027d32ad6ce,
       type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 20ca85b3f1aac2147b2f41891a24cdd3,
