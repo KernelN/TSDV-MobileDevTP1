@@ -21,6 +21,8 @@ public class GameplayManager : MonoBehaviour
 
     public Player Player1;
     public Player Player2;
+    public ControladorDeDescarga Contr1;
+    public ControladorDeDescarga Contr2;
     public bool DosJugadores => Player2 != null;
 
     bool ConteoRedresivo = true;

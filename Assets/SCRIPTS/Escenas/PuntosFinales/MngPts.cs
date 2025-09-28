@@ -41,7 +41,7 @@ public class MngPts : MonoBehaviour
             Input.GetKeyDown(KeyCode.Return) ||
             Input.GetKeyDown(KeyCode.Alpha0))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("MainMenu");
         }
 
         //CIERRA LA APLICACION

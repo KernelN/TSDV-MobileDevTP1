@@ -14,12 +14,12 @@ public class Deposito2 : MonoBehaviour
 	
 	//----------------------------------------------//
 
-	void Start () 
+	void Start ()
 	{
-		if(!Contr1)
-			Contr1 = GameObject.Find("ContrDesc1").GetComponent<ControladorDeDescarga>();
+		if (!Contr1)
+			Contr1 = GameplayManager.Instancia.Contr1;
 		if(GameplayManager.Instancia.DosJugadores && !Contr2)
-			Contr2 = GameObject.Find("ContrDesc2").GetComponent<ControladorDeDescarga>();
+			Contr2 = GameplayManager.Instancia.Contr2;
 		
 		Physics.IgnoreLayerCollision(8,9,false);
 	}

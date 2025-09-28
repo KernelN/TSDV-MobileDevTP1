@@ -10,23 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Packed Assets
+  m_Name: Packed Assets Game
   m_EditorClassIdentifier: 
-  m_GroupName: Packed Assets
+  m_GroupName: Packed Assets Game
   m_GUID: 5a5af6dc6d76423459857422edcf37b7
   m_SerializeEntries:
-  - m_GUID: 9119117f9eb543f40986ffd7b05eacbc
-    m_Address: Assets/Addressables/Terreno - Menu.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d4379a30702377849bcba600a2d16d46
     m_Address: Assets/Addressables/Terreno - Level.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f7ae4014eab8835458295cf768272c3b
-    m_Address: Assets/Addressables/Depositos - Level.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
