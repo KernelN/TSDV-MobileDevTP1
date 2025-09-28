@@ -22596,7 +22596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Joystick1: {fileID: 5347541341002542962}
   Joystick2: {fileID: 0}
-  forceMobile: 1
+  forceMobile: 0
   has2Players: 0
   inputDevice: 0
 --- !u!114 &1367616630

@@ -11,6 +11,7 @@ namespace Universal.SceneManaging
         public string sceneLoading { get; private set; }
         [SerializeField] float minLoadSeconds;
         bool loadIsDone;
+        bool waitForCommand;
 
         //Unity Events
         void Awake()
@@ -34,17 +35,34 @@ namespace Universal.SceneManaging
         public void StartLoad(string sceneToLoad, bool useLoadingScene = true)
         {
             sceneLoading = sceneToLoad;
-            if(useLoadingScene)
-                SceneManager.LoadScene("LoadScene");
-            StartCoroutine(LoadAsyncScene());
+            waitForCommand = false;
+            Load(useLoadingScene);
         }
         public void StartLoad(int sceneToLoad, bool useLoadingScene = true)
         {
             sceneLoading = SceneManager.GetSceneByBuildIndex(sceneToLoad).name;
+            waitForCommand = false;
+            Load(useLoadingScene);
+        }
+        public void StartLoadAndHold(string sceneToLoad, bool useLoadingScene = false)
+        {
+            sceneLoading = sceneToLoad;
+            waitForCommand = true;
+            Load(useLoadingScene);
+        }
+        public void StartLoadAndHold(int sceneToLoad, bool useLoadingScene = false)
+        {
+            sceneLoading = SceneManager.GetSceneByBuildIndex(sceneToLoad).name;
+            waitForCommand = true;
+            Load(useLoadingScene);
+        }
+        void Load(bool useLoadingScene)
+        {
             if(useLoadingScene)
                 SceneManager.LoadScene("LoadScene");
             StartCoroutine(LoadAsyncScene());
         }
+        public void EnableSceneLoad() => waitForCommand = false;
         IEnumerator LoadAsyncScene()
         {
             yield return null; //wait 1 tick so LoadScene finishes loading
@@ -64,6 +82,8 @@ namespace Universal.SceneManaging
                 yield return null;
             } while (timer < minLoadSeconds);
 
+            while(waitForCommand) yield return null;
+            
             //Debug.Log("Finished loading " + sceneLoading);
             asyncLoad.allowSceneActivation = true;
         }
