@@ -54,7 +54,7 @@ public class MngPts : MonoBehaviour
         TiempEspReiniciar -= Time.deltaTime;
         if (TiempEspReiniciar <= 0)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("MainMenu");
         }
 
 

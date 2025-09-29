@@ -2761,7 +2761,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1269805226}
   - component: {fileID: 1269805227}
-  - component: {fileID: 1269805228}
   m_Layer: 0
   m_Name: ESCENARIO
   m_TagString: Untagged
@@ -2805,24 +2804,6 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
---- !u!114 &1269805228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269805225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2abf189b5c0783a4e8df7f5b338f6d3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  addressables:
-  - m_AssetGUID: 9119117f9eb543f40986ffd7b05eacbc
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
 --- !u!1 &1294580351
 GameObject:
   m_ObjectHideFlags: 0
