@@ -16,9 +16,9 @@ public class UIElementMover : MonoBehaviour
     void Update()
     {
         if (!isMoving) return;
-        timer += Time.deltaTime;
+        timer += Time.unscaledDeltaTime;
         if (timer > delay)
-            rectTransform.anchoredPosition += moveSpeed * Time.deltaTime;
+            rectTransform.anchoredPosition += moveSpeed * Time.unscaledDeltaTime;
     }
     void OnDisable()
     {
