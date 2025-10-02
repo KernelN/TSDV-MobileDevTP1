@@ -147,8 +147,10 @@ public class GameplayManager : MonoBehaviour
     }
     void OnDestroy()
     {
-        if (Instancia == this)
-            Instancia = null;
+        if (Instancia != this) return;
+        
+        Instancia = null;
+        Pause(false);
     }
 
     //----------------------------------------------------------//
@@ -173,6 +175,11 @@ public class GameplayManager : MonoBehaviour
 
         TiempoDeJuegoText.transform.parent.gameObject.SetActive(false);
         ConteoInicio.gameObject.SetActive(false);
+    }
+
+    public void Pause(bool shouldPause)
+    {
+        Time.timeScale = shouldPause ? 0 : 1;
     }
 
     void EmpezarCarrera()

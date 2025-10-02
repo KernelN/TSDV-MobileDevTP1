@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +23,11 @@ public class MusicManager : MonoBehaviour
     float timer;
     
     public static MusicManager inst { get; private set; }
-    
+    public bool IsMusicPlaying => currentSource != IsPlaying.None || targetSource != IsPlaying.None;
+    public bool HasTrack => cTrack != Track._count;
+    public bool IsMuted => HasTrack && !IsMusicPlaying;
+    public bool IsChanging => timer < fadeDuration;
+
     void Awake()
     {
         if (inst != null)
@@ -89,14 +92,17 @@ public class MusicManager : MonoBehaviour
         if(cTrack == Track._count) return;
         if(targetSource == IsPlaying.None) 
             targetSource = IsPlaying.Source1;
+        if(targetSource == currentSource) return;
         switch (targetSource)
         {
             case IsPlaying.Source1:
                 s1.volume = 0;
+                s1.clip = tracks[(int)cTrack];
                 s1.Play();
                 break;
             case IsPlaying.Source2:
                 s2.volume = 0;
+                s2.clip = tracks[(int)cTrack];
                 s2.Play();
                 break;
         }
@@ -111,7 +117,10 @@ public class MusicManager : MonoBehaviour
     public void PlayTrack(Track track)
     {
         if(track == cTrack) return;
+        bool isMuted = IsMuted;
         cTrack = track;
+        if(isMuted) return;
+        
         switch (currentSource)
         {
             case IsPlaying.None:
