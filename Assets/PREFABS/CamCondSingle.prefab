@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7719140682591558876}
   - component: {fileID: 6261572920220613560}
   - component: {fileID: 6364655163513515980}
-  - component: {fileID: 2418680872364828481}
+  - component: {fileID: 1764421679738265128}
   m_Layer: 0
   m_Name: CamCondSingle
   m_TagString: Untagged
@@ -93,7 +93,7 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462255651915872632}
   m_Enabled: 1
---- !u!114 &2418680872364828481
+--- !u!114 &1764421679738265128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1462255651915872632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b7a2adfa00fb4459610299db47d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f9f882e3740d1d4f862635421ea961f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}

@@ -23748,6 +23748,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CamCond
       objectReference: {fileID: 0}
+    - target: {fileID: 1764421679738265128, guid: 2f60da670637c4b47a63cbecbd062d45,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 6257}
     - target: {fileID: 2418680872364828481, guid: 2f60da670637c4b47a63cbecbd062d45,
         type: 3}
       propertyPath: target
