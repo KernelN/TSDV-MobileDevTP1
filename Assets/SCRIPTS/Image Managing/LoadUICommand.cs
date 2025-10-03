@@ -34,8 +34,10 @@ namespace Universal.Loading.UI
             if (!manager)
             {
                 manager = LoadUIManager.inst;
-                path = basePath + manager.platform;
-                failed |= !manager;
+                if(manager)
+                    path = basePath + manager.platform;
+                else
+                    failed = true;
             }
             
             if(failed)

@@ -4,7 +4,7 @@ using UnityEngine;
 public class CustomInputManager : MonoBehaviour
 {
     public static CustomInputManager inst;
-    enum InputDevice { Keyboard, Mobile, Gamepad}
+    enum InputDevice { Keyboard, Mobile, Gamepad }
     
     [Header("Set Values")]
     [SerializeField] VirtualJoystick Joystick1;

@@ -1,0 +1,8 @@
+Command Pattern = LoadUICommand
+Permite contener la lógica de carga y descarga de archivos para UI en una sola clase, la cual se puede enviar por parámetro como instrucción de ser necesario.
+ 
+Singleton Pattern = CustomInputManager
+Permite que todos los objetos que requieren input direccional sean capaces de leerlo, sin necesidad de recibir manualmente una referencia.
+
+ObjectPool Pattern = MoneyManager
+Recicla las bolsas de dinero que ya fueron consumidas o dejadas atras, evitando la instanciacion innecesaria y ahorrando memoria.
